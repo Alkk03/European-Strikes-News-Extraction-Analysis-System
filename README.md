@@ -17,21 +17,7 @@ A modular system for extracting and analyzing news about strikes and protests ac
    pip install -r requirements.txt
    ```
 
-2. **Set up environment variables:**
-   ```bash
-   # Copy the example environment file
-   cp env.example .env
-   
-   # Edit .env with your actual credentials
-   nano .env
-   ```
-   
-   **Required environment variables:**
-   - `MONGODB_URI` - Your MongoDB connection string
-   - `HF_TOKEN` - Your Hugging Face authentication token
-   - `GEONAMES_USERNAME` - Your GeoNames API username (free at geonames.org)
-
-3. **Run the complete pipeline:**
+2. **Run the complete pipeline:**
    ```bash
    python main.py
    ```
@@ -54,11 +40,14 @@ A modular system for extracting and analyzing news about strikes and protests ac
 
 ## Configuration
 
-The system uses environment variables for configuration:
+**Required environment variables:**
 
-- `MONGODB_URI` - MongoDB connection string
-- `HF_TOKEN` - Hugging Face authentication token
-- `GEONAMES_USERNAME` - GeoNames API username (free at geonames.org)
+**Edit .env with your credentials:**
+   - `MONGODB_URI` - Your MongoDB connection string
+   - `HF_TOKEN` - Your Hugging Face authentication token  
+   - `GEONAMES_USERNAME` - Your GeoNames API username (free at geonames.org)
+
+**Optional settings:**
 - `RSS_REFRESH_SEC` - RSS refresh interval (default: 300 seconds)
 
 ## Documentation
