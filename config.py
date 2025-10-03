@@ -126,8 +126,8 @@ def setup_huggingface():
 # ===================== MODEL PATHS =====================
 
 MODEL_PATHS = {
-    'multilabel_roberta': './new2_multilabel_roberta_model',
-    'trained_roberta': './trained_roberta_model/trained_roberta_model'
+    'multilabel_roberta': './multilabel_roberta_model',
+    'trained_roberta': './binary_classification/trained_roberta_model'
 }
 
 

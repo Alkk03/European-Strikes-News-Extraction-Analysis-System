@@ -78,7 +78,7 @@ class ParentChildRelationships:
                     from dateutil.parser import parse
                     converted_data['created_at'] = parse(value)
                 except:
-                    pass  # Keep as string if conversion fails
+                    pass 
         
         return converted_data
 

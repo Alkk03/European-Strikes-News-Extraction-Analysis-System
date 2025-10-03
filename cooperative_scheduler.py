@@ -116,8 +116,8 @@ class CountryState:
 
     def _call_processor_safely(self, json_blob):
         """
-        Calls the processor with a flexible signature:
-        Tries with (json, *corpus), then (json). Adds session=... if supported.
+        Calls the processor function with flexible parameters.
+        Automatically adapts to different function signatures by trying multiple call patterns.
         """
         func = self.process_func
         last_err = None
@@ -148,9 +148,7 @@ class CountryState:
         raise last_err if last_err else RuntimeError("Unknown processor call failure")
 
     def process_one_job_if_any(self, now_ts: float) -> bool:
-        """Process EXACTLY 1 job if:
-           - has work AND
-           - cooldown has passed (next_process_ts)."""
+        """Process one job from the queue if work is available and cooldown period has elapsed."""
         if not self.jobs or now_ts < self.next_process_ts:
             return False
 
